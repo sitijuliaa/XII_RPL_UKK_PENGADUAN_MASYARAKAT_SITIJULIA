@@ -2,7 +2,7 @@
 
 session_start();
 
-if(isset($_SESSION['nama'])){
+if(isset($_SESSION['username'])){
   header("location:home.php");
   }
 
@@ -27,13 +27,13 @@ if(isset($_SESSION['nama'])){
             <form class="card-body cardbody-color p-lg-4 text-white ">
             <h2 class="mb-3 mt-4 text-center" style="color:rgb(61, 61, 61);">L O G I N</h2>
               <div class="mb-3 mt-3 text-center">
-                NIK : <br>
-                <input class="rounded-3 border-light" type="text" name="nik" placeholder="masukan NIK anda" 
+                USERNAME : <br>
+                <input class="rounded-3 border-light" type="text" name="username" placeholder="masukan username anda" 
                 style="width: 300px;">
               </div>
               <div class="mb-3 mt-3 text-center">
-                Nama : <br>
-                <input class="rounded-3 border-light" type="text" name="nama" placeholder="masukan Nama anda" 
+                PASSWORD : <br>
+                <input class="rounded-3 border-light" type="password" name="password" placeholder="masukan password anda" 
                 style="width: 300px;">
               </div>
               <div class="text-center mt-3"> 

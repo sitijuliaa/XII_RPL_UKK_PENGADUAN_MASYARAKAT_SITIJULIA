@@ -2,14 +2,20 @@
 
 session_start();
 
-$nik = $_POST["nik"];
-$nama = $_POST["nama"];
+$username = $_POST["username"];
+$password = $_POST["password"];
+$level = $_POST["level"];
 
 $koneksi = new PDO("mysql:host=localhost;dbname=pengaduan_masyarakat","root","");
-$query = $koneksi->query("SELECT * FROM masyarakat WHERE nik='$nik' AND nama='$nama'");
+$query = $koneksi->query("SELECT * FROM petugas WHERE username='$username' AND password='$password'");
+   
+//var_dump($query->rowCount());
    if($query->rowCount() > 0){
-    $_SESSION["nama"] = $_POST['nama'];
-    $_SESSION["nik"] = $_POST['nik'];
+      session_start();
+   
+   $_SESSION["username"] = $_POST['username'];
+   $_SESSION["password"] = $_POST['password'];
+   $_SESSION["level"] = $_POST['level'];
     header("location:home.php");
    }else{
     header("location:login.php");

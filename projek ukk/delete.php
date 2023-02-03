@@ -2,10 +2,10 @@
 
 session_start();
 
-$idcp = $_GET['nik'];
+$nik = $_GET['nik'];
 
-$db = new PDO("mysql:host=localhost;dbname=pengaduan_masyarakat",'root','');
-$query = $db->query("DELETE FROM `masyarakat` WHERE `nik`= '$nik'");
+$koneksi = new PDO("mysql:host=localhost;dbname=pengaduan_masyarakat",'root','');
+$query = $koneksi->query("DELETE FROM `masyarakat` WHERE `nik`= '$nik'");
 
 if($query)
 {
