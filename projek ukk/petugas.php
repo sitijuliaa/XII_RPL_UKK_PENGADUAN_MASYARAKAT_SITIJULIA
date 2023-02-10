@@ -102,7 +102,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM petugas");
     </div>
     </div>
     <div class="text-end">
-        <a href="isi_data.php" class="btn btn-dark">Isi Catatan Perjalanan</a>
+        <a href="isi_data.php" class="btn btn-dark">Isi Catatan Pengaduann</a>
   </div>
 </body>
 </html>

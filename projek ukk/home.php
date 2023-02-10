@@ -48,7 +48,7 @@ session_start();
     </div>
 </div>
 <div class="text-end mt-3">
-<a href="catatan.php">
+<a href="masyarakat.php">
   <button class="btn btn-primary">Pengaduan Masyarakat</button>
 </a>
 </div>

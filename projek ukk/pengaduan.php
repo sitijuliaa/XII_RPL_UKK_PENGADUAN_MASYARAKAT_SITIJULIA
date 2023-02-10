@@ -33,6 +33,9 @@ $result = mysqli_query($koneksi, "SELECT * FROM pengaduan");
         <a class="nav-link text-dark" href="pengaduan.php">pengaduan</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link text-dark" href="isi_data.php">isi data</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link text-dark" href="logout.php">logout</a>
       </li>
     </ul>
@@ -103,7 +106,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM pengaduan");
     </div>
     </div>
     <div class="text-end">
-        <a href="isi_data.php" class="btn btn-dark">Isi Catatan Perjalanan</a>
+        <a href="isi_data.php" class="btn btn-dark">Isi Catatan Pengaduan</a>
   </div>
 </body>
 </html>

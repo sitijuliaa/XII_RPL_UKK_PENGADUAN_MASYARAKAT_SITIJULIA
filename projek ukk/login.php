@@ -19,7 +19,7 @@ if(isset($_SESSION['username'])){
 <body style="background:white">
     <div style="padding: 50px;">
         <form action="loginj.php"  method="POST">
-        <div class="text-center fs-1"><h1 class="text-black fw-bold">P E L A P O R A N P E N G D U A N M A S Y A R A K A T</h1></div>
+        <div class="text-center fs-1"><h1 class="text-black fw-bold"></h1></div>
         <div class="container mt-3">
         <div class="row" >
         <div class="col-md-6 offset-md-3">

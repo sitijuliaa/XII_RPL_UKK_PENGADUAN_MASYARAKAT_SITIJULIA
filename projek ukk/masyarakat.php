@@ -8,7 +8,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM masyarakat");
 
 if(isset($_GET['caper'])){
   $urut = $_GET['caper'];
-  $result =mysqli_query($konekasi,"SELECT * FROM masyarakat order by `$urut` ASC");
+  $result =mysqli_query($koneksi,"SELECT * FROM masyarakat order by `$urut` ASC");
 }
 // var_dump($result);
 ?>
@@ -37,6 +37,9 @@ if(isset($_GET['caper'])){
         <a class="nav-link text-dark" href="petugas.php">petugas</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link text-dark" href="isi_data.php">isi data</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link text-dark" href="logout.php">logout</a>
       </li>
     </ul>
@@ -52,10 +55,10 @@ if(isset($_GET['caper'])){
              </div>
              <div class="col-auto">
                   <select name="caper" class="form-control" style="width:100px" nik="">
-                    <option value="tanggal">nik</option>
-                    <option value="jam">nama</option>
-                    <option value="lokasi">username</option>
-                    <option value="suhu_tubuh">password</option>
+                    <option value="nik">nik</option>
+                    <option value="nama">nama</option>
+                    <option value="username">username</option>
+                    <option value="password">password</option>
     
                   </select>
                   </div>
@@ -103,7 +106,7 @@ if(isset($_GET['caper'])){
     </div>
     </div>
     <div class="text-end">
-        <a href="isi_data.php" class="btn btn-dark">Isi Catatan Perjalanan</a>
+        <a href="isi_data.php" class="btn btn-dark">Isi Catatan pengaduan masyarakat</a>
   </div>
 </body>
 </html>
