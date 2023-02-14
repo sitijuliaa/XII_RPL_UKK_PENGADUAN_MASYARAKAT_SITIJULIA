@@ -3,7 +3,7 @@
 session_start();
 
 // if(isset($_SESSION['nama'])){
-// header("location:loginr.php");
+// header("location:loginj.php");
 // }
 
    ?>

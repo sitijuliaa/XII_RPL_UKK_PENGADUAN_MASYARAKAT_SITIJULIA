@@ -2,111 +2,45 @@
 
 session_start();
 
-$koneksi = mysqli_connect("localhost","root","","pengaduan_masyarakat");
-
-$result = mysqli_query($koneksi, "SELECT * FROM masyarakat");
-
-if(isset($_GET['caper'])){
-  $urut = $_GET['caper'];
-  $result =mysqli_query($koneksi,"SELECT * FROM masyarakat order by `$urut` ASC");
-}
-// var_dump($result);
+if(isset($_SESSION['username'])){
+  header("location:home.php");
+  }
 ?>
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <title>pengaduan</title>
+        <title>pengaduan masyarakat</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body style="background:grey;">
-    <div class="container mt-5">
-    <h1 class="text-white">Pengaduan Masyarakat</h1>
-    <h4 class="text-white">Laporan Pengaduan</h4>
-    <div class="card text-center">
-  <div class="card-header">
-    <ul class="nav nav-pills card-header-pills">
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="home.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="pengaduan.php">laporan pengaduan</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="petugas.php">petugas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="isi_data.php">isi data</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="logout.php">logout</a>
-      </li>
-    </ul>
-  </div>
-</div>
-<div class="container mt-3" style="width:500px;margin-left:0px">
-<div class="card">
-        <div class="row fw-bold card-body">
-          <form>
-            <div class="row">
-                <div class="col-auto">
-                <span class="text-black fs-5">Urutkan Berdasarkan : </span>
-             </div>
-             <div class="col-auto">
-                  <select name="caper" class="form-control" style="width:100px" nik="">
-                    <option value="nik">nik</option>
-                    <option value="nama">nama</option>
-                    <option value="username">username</option>
-                    <option value="password">password</option>
-    
-                  </select>
-                  </div>
-                  <div class="col-auto">
-                  <button class="btn btn-primary">Urutkan</button>
+    <link href="style.css" rel="stylesheet">
+  </head>
+<body style="background:white">
+    <div style="padding: 50px;">
+        <form action="loginj.php"  method="POST">
+        <div class="text-center fs-1"><h1 class="text-black fw-bold"></h1></div>
+        <div class="container mt-3">
+        <div class="row" >
+        <div class="col-md-6 offset-md-3">
+        <div class="card my-6">
+            <form class="card-body cardbody-color p-lg-4 text-white ">
+            <h2 class="mb-3 mt-4 text-center" style="color:rgb(61, 61, 61);">L O G I N</h2>
+              <div class="mb-3 mt-3 text-center">
+                USERNAME : <br>
+                <input class="rounded-3 border-light" type="text" name="username" placeholder="masukan username anda" 
+                style="width: 300px;">
+              </div>
+              <div class="mb-3 mt-3 text-center">
+                PASSWORD : <br>
+                <input class="rounded-3 border-light" type="password" name="password" placeholder="masukan password anda" 
+                style="width: 300px;">
+              </div>
+              <div class="text-center mt-3"> 
+                <button type="submit" class="btn btn-success px-3 mb-3" style="width: 300px;">Login</button> <br>
+                <p><i>Belum Punya Akun? Click <a href="from_register.php" class="text-danger">Register</a></i></p>
                 </div>
               </div>
-              </div>
-          </from>
+              
+            </form>
         </div>
-      </div>
-</div>
-<div class="container">
-    <div class="card my-4 mt-3">
-    <div class="d-grip gap-2 col-12 mt-2">
-    <table class="table table-light table-hover table-borderless">
-  <thead>
-    <tr style="text-align:center;">
-      <th scope="col">No</th>
-      <th scope="col">nik</th>
-      <th scope="col">nama</th>
-      <th scope="col">username</th>
-      <th scope="col">pssword</th>
-      <th scope="col">telp</th>
-      <th scope="col">aksi</th>
-    </tr>
-  </thead>
-  <?php $i=1;?>
-  <?php while($row = mysqli_fetch_assoc($result)):?>
-  <tbody>
-    <tr class="text-center">
-      <th scope="row"><?= $i ?></th>
-      <td><?=$row['nik'];?></td>
-      <td><?=$row['nama'];?></td>
-      <td><?=$row['username'];?></td>
-      <td><?=$row['password'];?></td>
-      <td><?=$row['telp'];?></td>
-      <td><a href="update.php?nik=<?=$row['nik'];?>" class="btn btn-sm btn-success ml-auto">Update</a>
-      <a href="delete.php?nik=<?=$row['nik'];?>" class="btn btn-sm btn-danger ml-auto">delete</a></td>
-    </tr>
-    </tbody>
-    <?php $i++; ?>
-    <?php endwhile ?>
-    </table>
-    </div>
-    </div>
-    <div class="text-end">
-        <a href="isi_data.php" class="btn btn-dark">Isi Catatan pengaduan masyarakat</a>
-  </div>
 </body>
 </html>

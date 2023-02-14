@@ -4,8 +4,12 @@ session_start();
 
 $koneksi = mysqli_connect("localhost","root","","pengaduan_masyarakat");
 
-$result = mysqli_query($koneksi, "SELECT * FROM pengaduan");
+$result = mysqli_query($koneksi, "SELECT * FROM masyarakat");
 
+if(isset($_GET['caper'])){
+  $urut = $_GET['caper'];
+  $result =mysqli_query($koneksi,"SELECT * FROM masyarakat order by `$urut` ASC");
+}
 // var_dump($result);
 ?>
 <!DOCTYPE html>
@@ -24,13 +28,16 @@ $result = mysqli_query($koneksi, "SELECT * FROM pengaduan");
   <div class="card-header">
     <ul class="nav nav-pills card-header-pills">
       <li class="nav-item">
-        <a class="nav-link text-dark" href="home.php">Home</a>
+        <a class="nav-link text-dark" href="data_masyarakat.php">data masyarakat</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="masyarakat.php">laporan pengaduan</a>
+        <a class="nav-link text-dark" href="pengaduan.php">pengaduan</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="isi_data.php">isi data</a>
+        <a class="nav-link text-dark" href="isi_pengaduan.php">isi pengaduan</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="tanggapan.php">tanggapan</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-dark" href="logout.php">logout</a>
@@ -48,13 +55,11 @@ $result = mysqli_query($koneksi, "SELECT * FROM pengaduan");
              </div>
              <div class="col-auto">
                   <select name="caper" class="form-control" style="width:100px" nik="">
-                    <option value="id_pengaduan">id_pengaduan</option>
-                    <option value="tgl_pengaduan">tgl_pengaduan</option>
-                    <option value="username">username</option>
                     <option value="nik">nik</option>
-                    <option value="isi_laporan">isi_lporan</option>
-                    <option value="foto">foto</option>
-                    <option value="status">status</option>
+                    <option value="nama">nama</option>
+                    <option value="username">username</option>
+                    <option value="password">password</option>
+    
                   </select>
                   </div>
                   <div class="col-auto">
@@ -73,12 +78,11 @@ $result = mysqli_query($koneksi, "SELECT * FROM pengaduan");
   <thead>
     <tr style="text-align:center;">
       <th scope="col">No</th>
-      <th scope="col">id_pengaduan</th>
-      <th scope="col">tgl_pengaduan</th>
       <th scope="col">nik</th>
-      <th scope="col">isi_laporan</th>
-      <th scope="col">foto</th>
-      <th scope="col">status</th>
+      <th scope="col">nama</th>
+      <th scope="col">username</th>
+      <th scope="col">pssword</th>
+      <th scope="col">telp</th>
       <th scope="col">aksi</th>
     </tr>
   </thead>
@@ -87,14 +91,13 @@ $result = mysqli_query($koneksi, "SELECT * FROM pengaduan");
   <tbody>
     <tr class="text-center">
       <th scope="row"><?= $i ?></th>
-      <td><?=$row['id_pengaduan'];?></td>
-      <td><?=$row['tgl_pengaduan'];?></td>
       <td><?=$row['nik'];?></td>
-      <td><?=$row['isi_laporan'];?></td>
-      <td><?=$row['foto'];?></td>
-      <td><?=$row['status'];?></td>
-      <td><a href="update.php?id_pengaduan=<?=$row['id_pengaduan'];?>" class="btn btn-sm btn-success ml-auto">Update</a>
-      <a href="delete.php?id_pengaduan=<?=$row['id_pengaduan'];?>" class="btn btn-sm btn-danger ml-auto">delete</a></td>
+      <td><?=$row['nama'];?></td>
+      <td><?=$row['username'];?></td>
+      <td><?=$row['password'];?></td>
+      <td><?=$row['telp'];?></td>
+      <td><a href="update.php?nik=<?=$row['nik'];?>" class="btn btn-sm btn-success ml-auto">Update</a>
+      <a href="delete.php?nik=<?=$row['nik'];?>" class="btn btn-sm btn-danger ml-auto">delete</a></td>
     </tr>
     </tbody>
     <?php $i++; ?>
@@ -103,7 +106,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM pengaduan");
     </div>
     </div>
     <div class="text-end">
-        <a href="isi_data.php" class="btn btn-dark">Isi Catatan Pengaduan</a>
+        <a href="isi_data.php" class="btn btn-dark">Isi Catatan pengaduan masyarakat</a>
   </div>
 </body>
 </html>
