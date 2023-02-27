@@ -2,8 +2,8 @@
 
 session_start();
 
-// if(isset($_SESSION['nama_petugas'])){
-// header("location:logins.php");
+// if(isset($_SESSION['nama'])){
+// header("location:logind.php");
 // }
 
    ?>
@@ -30,7 +30,7 @@ session_start();
       <li class="nav-item">
         <a class="nav-link text-dark" href="home.php">Home</a>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="pengaduan.php">pengaduan</a>
+        <a class="nav-link text-dark" href="tanggapan.php">pengaduan</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-dark" href="logout.php">Logout</a>

@@ -21,14 +21,14 @@ style="font-family: 'Alfa Slab One', cursive;">PENGADUAN MASYARAKAT</h1></div>
             <form class="card-body cardbody-color p-lg-4 text-white ">
             <h2 class="mb-3 mt-4 text-center" style="color:rgb(61, 61, 61);">D A F T A R</h2>
               <div class="mb-3 mt-3 text-center ">
-                nik : <br>
-                <input class="rounded-3 border-light" type="text" name="nik"
-                 placeholder="masukan NIK anda" style="width: 300px;">
+                id_petugas : <br>
+                <input class="rounded-3 border-light" type="text" name="id_petugas"
+                 placeholder="masukan id_petugas anda" style="width: 300px;">
               </div>
               <div class="mb-3 mt-3 text-center">
-                nama : <br>
-                <input class="rounded-3 border-light" type="text" name="nama" 
-                placeholder="masukan nama anda" required style="width: 300px;">
+                nama_petugas : <br>
+                <input class="rounded-3 border-light" type="text" name="nama_petugas" 
+                placeholder="masukan nama_petugas anda" required style="width: 300px;">
               </div>
               <div class="mb-3 mt-3 text-center">
                 username : <br>
@@ -45,6 +45,11 @@ style="font-family: 'Alfa Slab One', cursive;">PENGADUAN MASYARAKAT</h1></div>
                 <input class="rounded-3 border-light" type="text" name="telp" 
                 placeholder="masukan telp anda" required style="width: 300px;">
               </div>
+              <div class="mb-3 mt-3 text-center">
+                level: <br>
+                <input class="rounded-3 border-light" type="text" name="level" 
+                placeholder="masukan level anda" required style="width: 300px;">
+                </div>
               <div class="text-center mt-3"> 
                 <button type="submit" class="btn px-3 mb-3 " style="width: 200px;background:#B4CDE6">Daftar</button> <br>
                 <p><i>Belum Punya Akun? Click <a href="login.php" class="text-primary">login</a></i></p>

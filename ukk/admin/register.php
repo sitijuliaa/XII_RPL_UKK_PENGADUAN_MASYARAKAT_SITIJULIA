@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
 <body >
 <body>
 <div style="padding:100px;text-align:center;">
-<form action="proses_register.php"  method="POST">
+<form action="login.php"  method="POST">
 <div class="text-center fs-1"><h1 class="text-white" 
 style="font-family: 'Alfa Slab One', cursive;">PENGADUAN MASYARAKAT</h1></div>
 <div class="container mt-3">
@@ -46,7 +47,7 @@ style="font-family: 'Alfa Slab One', cursive;">PENGADUAN MASYARAKAT</h1></div>
               </div>
               <div class="text-center mt-3"> 
                 <button type="submit" class="btn px-3 mb-3 " style="width: 200px;background:#B4CDE6">Daftar</button> <br>
-                <p><i>Belum Punya Akun? Click <a href="login.php" class="text-primary">login</a></i></p>
+                <p><i>Belum Punya Akun? Click <a href="loginf.php" class="text-primary">login</a></i></p>
                 </div>
         </form>
 </body>
